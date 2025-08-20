@@ -13,7 +13,6 @@
 		"https://raw.githubusercontent.com/SubTek/Scrapers/main/en_Torrent/tp2.json"		
 	],
 	"2": [
-		"https://raw.githubusercontent.com/SubTek/Scrapers/main/en_Torrent/comet.json",
 		"https://raw.githubusercontent.com/SubTek/Scrapers/main/en_Torrent/magnetdl.json",
 		"https://raw.githubusercontent.com/SubTek/Scrapers/main/en_Torrent/torrentgalaxy.json",
 		"https://raw.githubusercontent.com/SubTek/Scrapers/main/en_Torrent/piratebay.json",
