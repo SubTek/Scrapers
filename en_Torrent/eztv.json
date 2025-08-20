@@ -1,0 +1,31 @@
+{
+  "name": "EZTV",
+  "language": ["en"],
+  "domains": ["eztvx.to"],
+  "base_url": "https://eztvx.to",
+  "is_torrent": true,
+  "search_url_format_episode": {
+    "string_format": "/search/%s-%s",
+    "replacement": ["title_clean", "episode_handler"],
+    "custom_processing": {
+      "title_clean": "re.sub(r'[^A-Za-z0-9\\s\\.]+', '', title).replace(' ', '-').lower()",
+      "episode_handler": "f'S{season_2_digit}E{episode_2_digit}'"
+    }
+  },
+  "search_url_format_season_pack": {
+    "string_format": "/search/%s-%s",
+    "replacement": ["title_clean", "season_handler"],
+    "custom_processing": {
+      "title_clean": "re.sub(r'[^A-Za-z0-9\\s\\.]+', '', title).replace(' ', '-').lower()",
+      "season_handler": "f'S{season_2_digit}'"
+    }
+  },
+  "html": {
+    "results": "tr:has(a[href^='magnet:'])",
+    "title": "td:nth-child(3) a[href^='magnet:']@title",
+    "magnet": "td:nth-child(3) a[href^='magnet:']@href",
+    "seeders": "td:nth-child(6)",
+    "size": "td:nth-child(4)",
+    "min_seeders": 0
+  }
+}
