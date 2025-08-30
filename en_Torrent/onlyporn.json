@@ -1,0 +1,23 @@
+{
+  "name": "OnlyPorn",
+  "language": ["en"],
+  "domains": ["07b88951aaab-jaxxx-v2.baby-beamup.club"],
+  "base_url": "https://07b88951aaab-jaxxx-v2.baby-beamup.club",
+  "search_url_format_movie": {
+    "string_format": "/catalog/movie/eporner/search=%s.json",
+    "replacement": ["search_term"]
+  },
+  "api": {
+    "path_to_array": "metas",
+    "path_title": "name",
+    "path_detail_url": "id"
+  },
+  "detail": {
+    "path_to_array": "streams",
+    "path_title": "title",
+    "path_quality": "title",
+    "path_url": "url"
+  },
+  "is_torrent": false,
+  "is_direct": true
+}
