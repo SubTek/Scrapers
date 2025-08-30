@@ -1,0 +1,39 @@
+{
+  "name": "Superflix",
+  "language": [
+    "en"
+  ],
+  "domains": [
+    "23dfbfad8cb2-stremio-addon-superflix.baby-beamup.club"
+  ],
+  "base_url": "https://23dfbfad8cb2-stremio-addon-superflix.baby-beamup.club",
+  "search_url_format_episode": {
+    "string_format": "/stream/series/%s:%d:%d.json",
+    "replacement": [
+      "imdb_id",
+      "season_int",
+      "episode_int"
+    ]
+  },
+  "search_url_format_movie": {
+    "string_format": "/stream/movie/%s.json",
+    "replacement": [
+      "imdb_id"
+    ]
+  },
+  "search_url_format_season_pack": {
+    "string_format": "/stream/series/%s:%d:1.json",
+    "replacement": [
+      "imdb_id",
+      "season_int"
+    ]
+  },
+  "api": {
+    "path_to_array": "streams",
+    "path_title": "title",
+    "path_quality": "title",
+    "path_url": "url"
+  },
+  "is_torrent": false,
+  "is_direct": true
+}
