@@ -1,0 +1,27 @@
+{
+  "name": "Cinemeta",
+  "language": ["en"],
+  "domains": ["v3-cinemeta.strem.io"],
+  "base_url": "https://v3-cinemeta.strem.io",
+  "search_url_format_episode": {
+    "string_format": "/catalog/series/top/search=%s.json",
+    "replacement": ["search_term"]
+  },
+  "search_url_format_movie": {
+    "string_format": "/catalog/movie/top/search=%s.json",
+    "replacement": ["search_term"]
+  },
+  "api": {
+    "path_to_array": "metas",
+    "path_title": "name",
+    "path_detail_url": "id"
+  },
+  "detail": {
+    "path_to_array": "meta.videos",
+    "path_title": "name",
+    "path_quality": "released",
+    "path_url": "released"
+  },
+  "is_torrent": false,
+  "is_direct": true
+}
