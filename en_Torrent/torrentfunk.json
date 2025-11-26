@@ -1,0 +1,77 @@
+// torrentfunk.json (refined: verified only, quality hints, page support)
+{
+  "idPrefixes": ["tt", "imdb"],
+  "behaviorHints": {
+    "extraHints": {
+      "quality": true
+    },
+    "adult": false
+  },
+  "manifest": {
+    "id": "com.torrentfunk.scraper",
+    "version": "1.0.0",
+    "catalogs": [
+      {
+        "type": "movie",
+        "id": "torrentfunk_movies"
+      },
+      {
+        "type": "series",
+        "id": "torrentfunk_tv"
+      }
+    ],
+    "resources": [
+      "catalog",
+      "meta",
+      "stream"
+    ],
+    "types": [
+      "movie",
+      "series"
+    ],
+    "name": "TorrentFunk",
+    "description": "TorrentFunk - verified torrents only"
+  },
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "torrentfunk_movies",
+      "extra": [
+        [
+          {
+            "url": "https://www.torrentfunk.com/movies/{{{query}}}/verified/",
+            "detailUrl": "https://www.torrentfunk.com{{detail}}",
+            "type": {
+              "catalog": "movie"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "type": "series",
+      "id": "torrentfunk_tv",
+      "extra": [
+        [
+          {
+            "url": "https://www.torrentfunk.com/tv/{{{query}}}/verified/",
+            "detailUrl": "https://www.torrentfunk.com{{detail}}",
+            "type": {
+              "catalog": "series"
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "resourceTypes": {
+    "stream": {
+      "type": "torrent"
+    }
+  },
+  "search": {
+    "urls": [
+      "https://www.torrentfunk.com/search/{{{query}}}/"
+    ]
+  }
+}
