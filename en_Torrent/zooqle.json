@@ -1,0 +1,80 @@
+// zooqle.json (refined: proxy URL, sort param, extraHints for size/quality)
+{
+  "idPrefixes": ["tt", "imdb", "zoo"],
+  "behaviorHints": {
+    "extraHints": {
+      "videoCodec": true,
+      "audioCodec": true,
+      "size": true,
+      "quality": true
+    },
+    "adult": false
+  },
+  "manifest": {
+    "id": "com.zooqle.scraper",
+    "version": "1.0.2",
+    "catalogs": [
+      {
+        "type": "movie",
+        "id": "zooqle_movies"
+      },
+      {
+        "type": "series",
+        "id": "zooqle_tv"
+      }
+    ],
+    "resources": [
+      "catalog",
+      "meta",
+      "stream"
+    ],
+    "types": [
+      "movie",
+      "series"
+    ],
+    "name": "Zooqle Proxy",
+    "description": "Zooqle.pro - 6M+ verified torrents via active proxy"
+  },
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "zooqle_movies",
+      "extra": [
+        [
+          {
+            "url": "https://zooqle.pro/search?q={{{query}}}&t=movies&s=sz&v=t",
+            "detailUrl": "https://zooqle.pro{{detail}}",
+            "type": {
+              "catalog": "movie"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "type": "series",
+      "id": "zooqle_tv",
+      "extra": [
+        [
+          {
+            "url": "https://zooqle.pro/search?q={{{query}}}&t=tv&s=sz&v=t",
+            "detailUrl": "https://zooqle.pro{{detail}}",
+            "type": {
+              "catalog": "series"
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "resourceTypes": {
+    "stream": {
+      "type": "torrent"
+    }
+  },
+  "search": {
+    "urls": [
+      "https://zooqle.pro/search?q={{{query}}}&s=sz&v=t"
+    ]
+  }
+}
