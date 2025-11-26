@@ -1,0 +1,101 @@
+// knaben.json (refined: page param, configurable pages, search integration)
+{
+  "idPrefixes": ["tt", "imdb", "magnet:"],
+  "behaviorHints": {
+    "configurable": {
+      "attributes": {
+        "pages": {
+          "label": "Pages",
+          "options": {
+            "1": "1",
+            "2": "2",
+            "3": "3"
+          },
+          "defaultOption": "1"
+        }
+      }
+    },
+    "adult": false
+  },
+  "manifest": {
+    "id": "me.knaben.scraper",
+    "version": "1.0.0",
+    "catalogs": [
+      {
+        "type": "movie",
+        "id": "knaben_movies"
+      },
+      {
+        "type": "series",
+        "id": "knaben_tv"
+      }
+    ],
+    "resources": [
+      "catalog",
+      "meta",
+      "stream"
+    ],
+    "types": [
+      "movie",
+      "series"
+    ],
+    "name": "Knaben",
+    "description": "Knaben - DHT crawler, huge result count"
+  },
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "knaben_movies",
+      "extra": [
+        [
+          {
+            "url": "https://knaben.eu/search/{{{query}}}/{{{pages}}}/",
+            "detailUrl": "https://knaben.eu{{detail}}",
+            "type": {
+              "catalog": "movie"
+            },
+            "extra": [
+              [
+                {
+                  "pages": 1
+                }
+              ]
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "series",
+      "id": "knaben_tv",
+      "extra": [
+        [
+          {
+            "url": "https://knaben.eu/search/{{{query}}}/{{{pages}}}/",
+            "detailUrl": "https://knaben.eu{{detail}}",
+            "type": {
+              "catalog": "series"
+            },
+            "extra": [
+              [
+                {
+                  "pages": 1
+                }
+              ]
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "resourceTypes": {
+    "stream": {
+      "type": "torrent"
+    }
+  },
+  "search": {
+    "urls": [
+      "https://knaben.eu/search/{{{query}}}/1/"
+    ]
+  }
+}
